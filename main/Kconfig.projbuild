@@ -1,0 +1,86 @@
+menu "C3 Wireless Bridge custom settings"
+    config C3WB_SSID
+        string "Wifi SSID"
+        default "your_ssid"
+        help
+            Wifi SSID.
+    
+    config C3WB_PASS
+        string "Wifi Password"
+        default "your_password"
+        help
+            Wifi password.
+
+    config C3WB_RJ45_L_LED
+        int "Left RJ45 LED pin"
+        default 4
+        help
+            GPIO number (IOxx).
+
+    config C3WB_RJ45_R_LED
+        int "Right RJ45 LED pin"
+        default 5
+        help
+            GPIO number (IOxx).
+
+    config C3WB_WS2812_PIN
+        int "WS2812 pin"
+        default 10
+        help
+            GPIO number (IOxx).
+
+    config C3WB_WS2812_NUM
+        int "Number of WS2812"
+        range 1 3
+        default 3
+        help
+           Number of WS2812 neopixels.
+        
+    config C3WB_TTL_TX_PIN
+        int "TTL TX pin"
+        default 7
+        help
+            GPIO number (IOxx)
+    
+    config C3WB_TTL_RX_PIN
+        int "TTL RX pin"
+        default 6
+        help
+            GPIO number (IOxx)
+
+    config C3WB_TTL_BAUD
+        int "TTL baud rate"
+        default 2400
+        help
+            Baud rate for TTL interface.
+    
+    config C3WB_MQTT_BROKER_URL
+        string "MQTT broker IP"
+        default "mqtts://test.mosquitto.org:8886"
+        help
+            MQTT broker IP address.
+
+    config C3WB_MQTT_TOPIC_TELEMETRY
+        string "MQTT Telemetry topic name"
+        default "solar/inverter/telemetry"
+        help
+            MQTT Telemetry topic name.
+
+    config C3WB_MQTT_TOPIC_STATUS
+        string "MQTT Status topic name"
+        default "solar/inverter/status"
+        help
+            MQTT Status topic name.
+    
+    config C3WB_MQTT_TOPIC_COMMAND
+        string "MQTT Commands topic name"
+        default "solar/inverter/command"
+        help
+            MQTT Commands topic name.
+    config C3WB_MQTT_TOPIC_COMMAND_RESPONSE
+        string "MQTT Command Response Topic"
+        default "solar/inverter/1/command_response"
+        help
+            Topic used for setting ACKs/NACKs and execution confirmations.
+    
+endmenu
